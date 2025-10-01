@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get(
     "django-insecure-)fd@km23rogp3c7n1^2+i@amo*@ui4i*41alj#(1-fa!h$8l5#"
 )
 
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = os.environ.get("DEBUG", "False") == "False"
 
 # Allow Render URL + localhost for development
 ALLOWED_HOSTS = ["teacher-task-tracker-1.onrender.com", "127.0.0.1", "localhost"]
