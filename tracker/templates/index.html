@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mb-3 text-end">
+    <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+</div>
+
+<h4>Work Entry Form</h4>
+<form method="post" class="mb-4">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+
+<h4>Work Dashboard</h4>
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Teacher</th>
+            <th>Class Section</th>
+            <th>Exam Name</th>
+            <th>Subject Group</th>
+            <th>Subject Name</th>
+            <th>Student Status</th>
+            <th>Completion %</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in entries %}
+        <tr>
+            <td>{{ entry.teacher_name }}</td>
+            <td>{{ entry.class_section }}</td>
+            <td>{{ entry.exam_name }}</td>
+            <td>{{ entry.subject_group }}</td>
+            <td>{{ entry.subject_name }}</td>
+            <td>{{ entry.student_status }}</td>
+            <td>{{ entry.completion_percent }}%</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
