@@ -1,1 +1,1 @@
-web: gunicorn teacher_tracker.wsgi:application
+web: gunicorn teacher_tracker.wsgi
